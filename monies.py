@@ -33,16 +33,16 @@ def calculate_shares(
         ratio = ratios[name] / sum(ratios.values())
         share = ratio * total
         paid = expenses[expenses["name"] == name]["amount"].sum()
-        open = share - paid
+        still_open = share - paid
         logger.info(f"-- {name:10} --")
         logger.info(f"  share: {share:.2f}")
-        logger.info(f"  open:  {open:.2f}")
+        logger.info(f"  open:  {still_open:.2f}")
 
         info_name = {
             "ratio": ratio,
             "share": share,
             "paid": paid,
-            "open": open
+            "open": still_open
         }
 
         info[name] = info_name
