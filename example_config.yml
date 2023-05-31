@@ -1,0 +1,6 @@
+name: example
+infile: example_data.csv
+outfile: example_result.csv
+ratios:
+  person1: 2
+  person2: 1
